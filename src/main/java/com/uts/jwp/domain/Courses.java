@@ -1,9 +1,22 @@
 package com.uts.jwp.domain;
 
+import jakarta.validation.constraints.NotBlank;
+import jakarta.validation.constraints.NotNull;
+import jakarta.validation.constraints.Size;
+
 public class Courses {
+
+    @NotBlank(message = "courseCode name is required")
     private String courseCode;
+
+    @NotBlank(message = "CourseName is required")
+    @Size(min = 5, max = 10)
     private String courseName;
+
+    @NotNull(message = "TotSKS is required")
     private int totSKS;
+
+    @NotBlank(message = "Faculty is required")
     private String faculty;
 
     public Courses() {
@@ -41,11 +54,5 @@ public class Courses {
     public void setFaculty(String faculty) {
         this.faculty = faculty;
     }
-
-    
-
-    
-
-    
 
 }
